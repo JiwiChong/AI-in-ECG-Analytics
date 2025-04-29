@@ -32,3 +32,8 @@ Afterwards, baseline correction is made to the output to remove its low frequenc
 normalization is applied to the output to remove any possible outlier and prevent disruption in the learning
 process of the model. 
 
+<div align="center">
+<img src="https://github.com/user-attachments/assets/66398f49-1ba9-4934-8ef3-73d6ef09fba2" width=85% height=85%>
+</div><br />
+
+
