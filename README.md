@@ -36,4 +36,16 @@ process of the model.
 <img src="https://github.com/user-attachments/assets/66398f49-1ba9-4934-8ef3-73d6ef09fba2" width=85% height=85%>
 </div><br />
 
+Ultimately, "1D-CNN with Attention" model has been trained for 45 epochs using the following hyperparameter set:
+
+* Learning Rate : 0.001
+* Weight Decay : 0.01
+* Optimizer : Weighted Adam
+
+According to the Metric Comparison Table, 1D-CNN with Attention outperformed several State-of-the-Art models, demonstrating
+importance of the Attention Mechanism to detect the most salient part of the input data:
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/86b35385-0081-4426-b9de-21f154a808bb" width=85% height=85%>
+</div><br />
 
