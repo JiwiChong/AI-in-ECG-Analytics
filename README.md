@@ -17,5 +17,18 @@ serves to predict whether its condition is **Normal** or **Abnormal**.
 
 ### 1D-CNN with Attention
 
-![image](https://github.com/user-attachments/assets/696d2ec4-3463-497a-afea-4310df27a2ed)
+<div align="center">
+<img src="https://github.com/user-attachments/assets/696d2ec4-3463-497a-afea-4310df27a2ed" width=85% height=85%>
+</div><br />
+
+Firstly, the data is preprocessed to prevent the presence of outliers and overfitting. Wavelet Transform Daubechies 4 is
+first applied in order to promote robust noise reduction while preserving important signal characteristics.
+
+<div align="center">
+<img src="https://github.com/user-attachments/assets/99b80bc8-5c89-4a88-88ed-6161f13f2413" width=85% height=85%>
+</div><br />
+
+Afterwards, baseline correction is made to the output to remove its low frequency baseline drift. Finally, Z-score
+normalization is applied to the output to remove any possible outlier and prevent disruption in the learning
+process of the model. 
 
