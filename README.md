@@ -46,6 +46,7 @@ According to the Metric Comparison Table, 1D-CNN with Attention outperformed sev
 importance of the Attention Mechanism to detect the most salient part of the input data:
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/86b35385-0081-4426-b9de-21f154a808bb" width=85% height=85%>
+<img src="https://github.com/user-attachments/assets/276287fe-e8aa-4bd8-9de6-ef85b67224b6" width=85% height=85%>
 </div><br />
+
 
