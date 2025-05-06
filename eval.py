@@ -71,7 +71,7 @@ def ensemble_eval(model, ensemble, test_dataloader, y_test):
     
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Time Series forecasting of device data')
+    parser = argparse.ArgumentParser(description='ECG analysis and classification')
     parser.add_argument('--data_dir', type=str, help='Main directory of input dataset')
     parser.add_argument('--batch_size', type=int, default=32, help='batch size')
     parser.add_argument('--model_name', type=str, help='model')
