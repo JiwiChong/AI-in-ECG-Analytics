@@ -71,8 +71,6 @@ def run(args, model, train_loader, val_loader,criterion, optimizer, scheduler):
 
         with torch.no_grad():
             b_valid_loss = []
-            # b_valid_y = []
-            # b_valid_y_hat = []
             val_correct, val_total = 0, 0
             for i, (inputs, labels) in enumerate(val_loader):
                 inputs = inputs.to(device)
