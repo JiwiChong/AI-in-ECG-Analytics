@@ -42,6 +42,32 @@ Ultimately, "1D-CNN with Attention" model has been trained for 45 epochs using t
 * Weight Decay : 0.01
 * Optimizer : Weighted Adam
 
+## Commands
+### (PTB Diagnostic for ECG dataset)
+#### Training using Ensemble 
+
+```python
+python main.py --data_dir ./ptb_ecg --batch_size 32 --model_name CNN1D_Att --data ptb_ecg --ensemble True --epochs 45
+--classes 2 --num_models 5 --run_num 2
+```
+
+#### Training without using Ensemble 
+
+```python
+python main.py --data_dir ./ptb_ecg --batch_size 32 --model_name CNN1D_Att --data ptb_ecg --ensemble False --epochs 45
+--classes 2 --run_num 2
+```
+
+#### Evaluation using Ensemble
+```python
+python eval.py --batch_size 32 --model_name CNN1D_Att --data ptb_ecg --ensemble True --classes 2 --num_models 5 --run_num 2
+```
+
+#### Evaluation without using Ensemble
+```python
+python eval.py --batch_size 32 --model_name CNN1D_Att --data ptb_ecg --ensemble False --classes 2 -run_num 2
+```
+
 According to the Metric Comparison Table, 1D-CNN with Attention outperformed several State-of-the-Art models, demonstrating
 importance of the Attention Mechanism to detect the most salient part of the input data:
 
