@@ -34,16 +34,19 @@ def save_checkpoint(save_path, model, best_val_acc, loss):
 def load_and_prepare_data(args):
     """Load and prepare PTB-DB dataset"""
 
-    normal_df = pd.read_csv(f'{args.data_dir}/ptbdb_normal.csv', header=None)
-    abnormal_df = pd.read_csv(f'{args.data_dir}/ptbdb_abnormal.csv', header=None)
+    if args.data == 'ptb_ecg':
+        normal_df = pd.read_csv(f'{args.data_dir}/ptbdb_normal.csv', header=None)
+        abnormal_df = pd.read_csv(f'{args.data_dir}/ptbdb_abnormal.csv', header=None)
+        combined_data = pd.concat([normal_df, abnormal_df], axis=0, ignore_index=True)
+        combined_data = combined_data.sample(frac=1, random_state=42).reset_index(drop=True)
     
-    combined_data = pd.concat([normal_df, abnormal_df], axis=0, ignore_index=True)
-    combined_data = combined_data.sample(frac=1, random_state=42).reset_index(drop=True)
-    
+    elif args.data == 'mit-bih':
+        combined_data = pd.read_csv(f'{args.data_dir}/entire_df.csv', index_col=0)
+
     X_data = combined_data.iloc[:, :-1].values
     y_data = combined_data.iloc[:, -1].values
     
-    print("\nClass distribution:")
+    print("\n Pre Class distribution:")
     unique, counts = np.unique(y_data, return_counts=True)
     for label, count in zip(unique, counts):
         print(f"Class {label}: {count} samples ({count/len(y_data)*100:.2f}%)")
